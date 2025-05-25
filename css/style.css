@@ -1,0 +1,147 @@
+  /* ページ全体の余白をなくす */
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+  }
+  
+  /* ヘッダーを画面幅いっぱいにする */
+  .header {
+    background-color: #00205B;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  
+    position: fixed;     /* ← 固定表示 */
+    top: 0;              /* ← 上端に貼り付け */
+    left: 0;
+    z-index: 1000;       /* ← 他の要素の上に表示 */
+  }
+  
+  
+  /* ロゴ画像サイズ */
+  .header-logo img {
+    height: 40px;
+  }
+  
+  /* ナビゲーションリスト設定 */
+  .gnav-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 各ナビゲーション項目のリンク */
+  .gnav-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+  
+  /* 仕切り線を右に表示（最後の要素以外） */
+  .gnav-item:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+  
+  
+  .gnav-item a:hover {
+    text-decoration: underline;
+  }
+  
+ /* メインビジュアル全体 */
+.mv {
+    background-color: #f8f9fb;
+    padding: 160px 160px; /* 上下の余白を大きく（以前は60px） */
+    text-align: center;
+  }
+  
+  /* 名前の部分 */
+  .mv-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Verdana, sans-serif;
+    color: #00205B;
+  }
+  
+  /* PORTFOLIO の部分 */
+  .mv-subtitle {
+    font-size: 18px;
+    font-weight: bold;        /* ← 太文字に */
+    color: #00205B;           /* ← ヘッダーと同じ色に */
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+  
+  /* 説明文（研究内容） */
+  .mv-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1100px;       /* ← 最大幅を制限して読みやすく */
+    margin: 0 auto;         /* ← 中央寄せ */
+    padding: 0 20px;        /* ← 小さい画面でも少し余白を確保 */
+  }
+
+  /* ABOUT全体の背景色を薄いグレーに */
+  .about {
+    background-color: #f4f4f4;  /* ← 薄いグレー背景 */
+    padding: 50px 20px;
+  }
+  
+  /* セクションタイトル中央寄せ */
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #00205B;
+    font-weight: bold;
+    margin-bottom: 60px;
+    font-family: Verdana, sans-serif;
+  }
+  
+  /* 顔写真（縦長楕円・枠なし） */
+  .about-image img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50% / 60%;
+    border: none;
+  }
+  
+  /* コンテナのレイアウト */
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  /* 説明文（ひと段落） */
+  .about-text {
+    flex: 1;
+    min-width: 280px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  .about-text p {
+    margin: 0;
+  }
+  
+  
