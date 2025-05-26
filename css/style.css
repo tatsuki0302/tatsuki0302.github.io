@@ -325,3 +325,81 @@
     text-decoration: underline; /* ホバー時のみ下線（任意） */
   }
   
+
+  /* -----------------------------
+   スマートフォン向けの調整
+----------------------------- */
+@media screen and (max-width: 767px) {
+
+  /* RECENT WORKS セクションの余白を調整 */
+  .works {
+    padding: 80px 20px;
+  }
+
+  /* 発表リストの横幅調整 */
+  .works-list {
+    width: 100%;
+    margin: 0 0 40px 0;
+  }
+
+  /* SKILL セクションを縦並びに */
+  .skill-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-item {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .skill-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mv {
+    padding: 100px 20px;
+  }
+
+  .mv-title {
+    font-size: 36px;
+  }
+
+  .mv-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .mv-description {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+}
+
+
+/* =========================
+   レスポンシブ対応（スマートフォン向け）
+   ========================= */
+   @media screen and (max-width: 767px) {
+    /* SKILLセクションのスキルリストを縦並びに変更 */
+    .skill-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .skill-item {
+      width: 100%;
+      max-width: 90%;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  
+    .skill-img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px auto;
+    }
+  }
+  

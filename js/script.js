@@ -1,4 +1,3 @@
-// ページトップに戻るアニメーション
 document.addEventListener("DOMContentLoaded", function () {
   const pageTop = document.getElementById("js-page-top");
   if (pageTop) {
@@ -8,14 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // PRESENTATIONS に番号を振る
-  const presentationList = document.querySelectorAll('#presentation-list .work-item .work-name');
-  presentationList.forEach((item, index) => {
-    item.innerHTML = `[${index + 1}] ` + item.innerHTML;
+  const presentationItems = document.querySelectorAll('#presentation-list .work-name');
+  presentationItems.forEach((item, index) => {
+    if (!item.innerHTML.startsWith("[")) {
+      item.innerHTML = `[${index + 1}] ` + item.innerHTML;
+    }
   });
 
   // AWARDS に番号を振る
-  const awardList = document.querySelectorAll('#award-list .work-item .work-name');
-  awardList.forEach((item, index) => {
-    item.innerHTML = `[${index + 1}] ` + item.innerHTML;
+  const awardItems = document.querySelectorAll('#award-list .work-name');
+  awardItems.forEach((item, index) => {
+    if (!item.innerHTML.startsWith("[")) {
+      item.innerHTML = `[${index + 1}] ` + item.innerHTML;
+    }
   });
 });
