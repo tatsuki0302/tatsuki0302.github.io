@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Tatsuki Yamamoto</title>
+    <link rel="stylesheet" href="css/ress.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Material Icons の読み込み -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 
   </head>
@@ -21,8 +21,8 @@
         <nav class="header-nav">
           <ul class="gnav-list">
             <li class="gnav-item"><a href="#about">ABOUT</a></li>
-            <li class="gnav-item"><a href="#Presentation">PRESENTATIONS</a></li>
-            <li class="gnav-item"><a href="#Skill">SKILL</a></li>
+            <li class="gnav-item"><a href="#resent_works">RECENT WORKS</a></li>
+            <li class="gnav-item"><a href="#skill">SKILL</a></li>
             <li class="gnav-item"><a href="#contact">CONTACT</a></li>
           </ul>
         </nav>
@@ -60,6 +60,83 @@
             </div>
         </section>
 
+                <!-- RECENT WORKS セクション -->
+        <section class="works section" id="resent_works">
+          <h2 class="section-title">RECENT WORKS</h2>
+
+          <h3 class="works-type">PRESENTATIONS</h3>
+          <div class="works-list" id="presentation-list">
+            
+            <div class="work-item">
+              <p class="work-name">
+                Tatsuki YAMAMOTO, Yuzuha TSUJI, Minoru SAKURAGI, Yuji OKAMOTO, Mayumi KAMADA, Yasushi OKUNO. 
+                「Elucidation of Mortality Triggers Using Temporal Predictive Models」, 
+                <a href="https://cbi-society.org/taikai/taikai23/index.html" target="_blank" rel="noopener">
+                  『Chem-Bio Informatics Society Annual Meeting 2023』
+                </a>, Tokyo, October 26, 2023. [POSTER]
+              </p>
+            </div>
+
+            <div class="work-item">
+              <p class="work-name">
+                Tatsuki YAMAMOTO, Yuzuha TSUJI, Minoru SAKURAGI, Yuji OKAMOTO, Mayumi KAMADA, Yasushi OKUNO. 
+                「What Happens to Cancer Patients before They Die? Extracting the Dynamics of Mortality Factors using Machine Learning」, 
+                <a href="https://linc-ai.jp/news/files/240821_SHOWCASE%20Flyer_2.pdf" target="_blank" rel="noopener">
+                  『Life Intelligence Consortium(LINC) SHOWCASE 2024 Summer』
+                </a>, Osaka, August 21, 2024. [POSTER]
+              </p>
+            </div>
+
+          </div>
+                  
+
+          <!-- AWARDS -->
+          <h3 class="works-type">AWARDS</h3>
+          <div class="works-list" id="award-list">
+            <div class="work-item">
+              <p class="work-name">
+                Excellent Poster Award, Chem-Bio Informatics Society Annual Meeting 2023
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="skill section" id="skill">
+          <h2 class="section-title">SKILL</h2>
+          <div class="skill-container">
+            
+            <!-- 左：Python -->
+            <div class="skill-item">
+              <img src="img/img_python.png" alt="Pythonロゴ" class="skill-img">
+              <h3 class="skill-title">Python</h3>
+              <p class="skill-text">
+                Pythonを用いた研究経験<br>
+                Pytorchを用いた深層学習の実装経験
+              </p>
+            </div>
+        
+            <!-- 中：Bioinformatics -->
+            <div class="skill-item">
+              <img src="img/img_bioinfo.jpg" alt="Bioinformatics画像" class="skill-img">
+              <h3 class="skill-title">Bioinformatics</h3>
+              <p class="skill-text">
+                JSBi認定バイオインフォマティクス技術者<br>
+                scRNA-seq/snRNA-seqデータの解析経験
+              </p>
+            </div>
+        
+            <!-- 右：Medical Technologist -->
+            <div class="skill-item">
+              <img src="img/img_medtech.jpg" alt="臨床検査技師画像" class="skill-img">
+              <h3 class="skill-title">Medical Technologist</h3>
+              <p class="skill-text">
+                臨床検査技師免許
+              </p>
+            </div>
+        
+          </div>
+        </section>
+
         <!-- CONTACTセクション -->
         <section class="contact section" id="contact">
             <h2 class="section-title">CONTACT</h2>
@@ -82,6 +159,12 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="footer-text">©️TATSUKI YAMAMOTO</div>
+
+        <div class="footer-credit">
+          <a href="https://jp.freepik.com/" target="_blank" rel="noopener">
+            SKILLに用いられているイラスト(Bioinformatics, Medical Technologist)の著作権はFreepikにあります
+          </a>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
