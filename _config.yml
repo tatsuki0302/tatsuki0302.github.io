@@ -1,5 +1,5 @@
 plugins:
   - jekyll-sitemap
-
-include:
+exclude:
   - google25b86e9470a24eb4.html
+
