@@ -403,3 +403,195 @@
     }
   }
   
+  /* =========================
+   RESEARCH ARTICLES 番号付きリスト用
+   ========================= */
+.works-list {
+  counter-reset: work-counter; /* リスト全体でカウンター初期化 */
+}
+
+.work-item {
+  counter-increment: work-counter; /* 各アイテムごとに+1 */
+  margin-bottom: 1.5em;
+}
+
+.work-ref .work-title {
+  display: inline;   /* ← block から inline に変更 */
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.work-ref a {
+  color: #333;
+  text-decoration: none;
+}
+
+.work-ref a:hover {
+  text-decoration: underline;
+}
+
+.work-ref {
+  font-size: 16px;
+  line-height: 1.8;   /* ← デフォルトより少し広め */
+  margin-bottom: 1.5em;
+}
+
+.work-ref br {
+  line-height: 2; /* 改行のところだけ間隔を広く */
+}
+
+.work-authors {
+  display: block;
+  margin-top: 0.5em;
+  line-height: 1.8;
+  margin-left: 3.2em;   /* ← 全行まとめて字下げ */
+}
+
+.my-name {
+  text-decoration: underline;  /* 下線を引く */
+}
+
+
+/* =========================
+   PRESENTATIONS 番号付きリスト用
+   ========================= */
+.presentations-list {
+  counter-reset: pres-counter; /* カウンター初期化 */
+}
+
+.presentations-list .work-item {
+  counter-increment: pres-counter;
+  margin-bottom: 1.5em;
+}
+
+.presentation-ref .work-title {
+  display: inline;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.presentation-ref a {
+  color: #333;
+  text-decoration: none;
+}
+
+.presentation-ref a:hover {
+  text-decoration: underline;
+}
+
+.presentation-ref {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+}
+
+.presentation-ref br {
+  line-height: 2;
+}
+
+.presentation-ref .work-authors {
+  display: block;
+  margin-top: 0.5em;
+  line-height: 1.8;
+  margin-left: 0em;  /* 字下げ */
+}
+
+.my-name {
+  text-decoration: underline; /* 自分の名前に下線 */
+}
+
+.work-ref::before {
+  content: "[" counter(work-counter) "] ";
+  display: inline-block;
+  width: 2.5em;
+  text-align: right;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+
+.presentation-ref::before {
+  content: "[" counter(pres-counter) "] ";
+  display: inline-block;
+  width: 2.5em;
+  text-align: right;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+
+.works-list,
+.presentations-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 40px 30px; /* ← 同じmargin */
+  width: 90%;
+}
+
+.work-item {
+  margin-bottom: 0.5em;
+}
+
+
+.work-ref,
+.presentation-ref {
+  margin-bottom: 0;  /* ← pタグの余白を消す */
+}
+.work-item {
+  margin-bottom: 0em; /* ← 余白を一元管理 */
+}
+
+.work-item {
+  margin-bottom: 0; /* アイテム間の余白ゼロ */
+}
+.work-ref,
+.presentation-ref {
+  margin-bottom: 0; /* pタグの余白もゼロ */
+}
+
+.work-ref,
+.presentation-ref {
+  margin-bottom: 0;
+  line-height: 1.5; /* ← 行間を詰める */
+}
+
+.work-ref br,
+.presentation-ref br {
+  line-height: 0.5; /* ← 改行の余白もゼロに近く */
+}
+
+
+/* 番号付きの本文全体 */
+.work-ref,
+.presentation-ref {
+  position: relative;     /* 番号の基準にする */
+  padding-left: 3em;      /* 番号ぶん右に押し出す */
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+/* 番号 */
+.work-ref::before,
+.presentation-ref::before {
+  position: absolute;
+  left: 0;                /* 左端に固定 */
+  top: 0;                 /* 行頭に揃える */
+  width: 2.5em;           /* 番号の幅 */
+  text-align: right;      /* 番号を右寄せ */
+  font-weight: bold;
+}
+
+/* タイトル */
+.work-ref .work-title,
+.presentation-ref .work-title {
+  font-weight: bold;
+  font-size: 18px;
+  display: inline;
+}
+/* 著者リストはタイトルと同じ開始位置 */
+.work-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-left: 0;       /* ← 常に本文の開始位置から */
+  line-height: 1.6;
+}
+
+
