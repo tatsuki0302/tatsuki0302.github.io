@@ -158,13 +158,6 @@
     color: #333;
   }
 
-  .works-list {
-    display: flex;
-    flex-direction: column;
-    margin: 0 30px 40px 30px;
-    width: 90%;
-  }
-
   .work-item {
     text-decoration: none;
     color: #333;
@@ -193,16 +186,6 @@
     padding: 100px 20px;
   }
   
-  /* セクションタイトル（共通化） */
-  .section-title {
-    text-align: center;
-    font-size: 32px;
-    color: #00205B;
-    font-weight: bold;
-    margin-bottom: 60px;
-    font-family: Verdana, sans-serif;
-  }
-
   /* SKILL セクション背景 */
 .skill {
   background-color: #f4f4f4;
@@ -415,12 +398,6 @@
   margin-bottom: 1.5em;
 }
 
-.work-ref .work-title {
-  display: inline;   /* ← block から inline に変更 */
-  font-weight: bold;
-  font-size: 18px;
-}
-
 .work-ref a {
   color: #333;
   text-decoration: none;
@@ -464,12 +441,6 @@
   margin-bottom: 1.5em;
 }
 
-.presentation-ref .work-title {
-  display: inline;
-  font-weight: bold;
-  font-size: 18px;
-}
-
 .presentation-ref a {
   color: #333;
   text-decoration: none;
@@ -494,10 +465,6 @@
   margin-top: 0.5em;
   line-height: 1.8;
   margin-left: 0em;  /* 字下げ */
-}
-
-.my-name {
-  text-decoration: underline; /* 自分の名前に下線 */
 }
 
 .work-ref::before {
@@ -526,25 +493,13 @@
   width: 90%;
 }
 
-.work-item {
-  margin-bottom: 0.5em;
-}
-
-
 .work-ref,
 .presentation-ref {
   margin-bottom: 0;  /* ← pタグの余白を消す */
 }
-.work-item {
-  margin-bottom: 0em; /* ← 余白を一元管理 */
-}
 
 .work-item {
   margin-bottom: 0; /* アイテム間の余白ゼロ */
-}
-.work-ref,
-.presentation-ref {
-  margin-bottom: 0; /* pタグの余白もゼロ */
 }
 
 .work-ref,
@@ -610,7 +565,7 @@
 
 /* LinkedIn リンクの見た目（通常は黒・下線なし） */
 .contact-linkedin {
-  color: #00205B;
+  color: #0a5089;
   text-decoration: none;
 }
 
@@ -623,5 +578,3 @@
 .contact-separator {
   color: #333;
 }
-
-
