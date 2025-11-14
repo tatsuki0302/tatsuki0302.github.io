@@ -578,3 +578,8 @@
 .contact-separator {
   color: #333;
 }
+
+/* AWARDS と WORK EXPERIENCES の間隔を少し広げる */
+#award-list {
+    margin-bottom: 60px;  /* 好みに応じて 50〜80px くらいで調整 */
+  }
