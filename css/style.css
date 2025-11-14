@@ -594,4 +594,34 @@
   line-height: 1.6;
 }
 
+/* CONTACT 内のリンクとメールを横並びに */
+.contact-links {
+  font-size: 14px;
+  text-align: center;          /* 左寄せにしたければ left に変更 */
+}
+
+/* LinkedIn リンク・メール・区切りを同じ行に */
+.contact-links .contact-linkedin,
+.contact-links .contact-email,
+.contact-links .contact-separator {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+/* LinkedIn リンクの見た目（通常は黒・下線なし） */
+.contact-linkedin {
+  color: #333;
+  text-decoration: none;
+}
+
+/* ホバー時だけ下線を表示 */
+.contact-linkedin:hover {
+  text-decoration: underline;
+}
+
+/* 区切りの / の余白など微調整したければここで */
+.contact-separator {
+  color: #333;
+}
+
 
