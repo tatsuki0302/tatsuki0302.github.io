@@ -158,19 +158,58 @@
     color: #333;
   }
 
+  .works-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px 40px 30px;
+    width: 90%;
+  }
+
+  .work-item {
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .work-name {
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: .03em;
+  }
+
+  .work-name a {
+    text-decoration: none;   /* ← 下線を消す */
+    color: inherit;          /* ← 周囲の文字と同じ色にする */
+  }
+  
+  .work-name a:hover {
+    text-decoration: underline;  /* ← ホバー時のみ下線を出す（任意） */
+  }
+
+  
   /* CONTACT セクション全体 */
   .contact {
     background-color: #ffffff; 
     padding: 100px 20px;
   }
   
+  /* セクションタイトル（共通化） */
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #00205B;
+    font-weight: bold;
+    margin-bottom: 60px;
+    font-family: Verdana, sans-serif;
+  }
+
   /* SKILL セクション背景 */
 .skill {
   background-color: #f4f4f4;
   padding: 80px 20px;
 }
 
-/* コンテナ：2x2のグリッド配置 */
+/* コンテナ：3列並び */
 .skill-container {
   display: flex;
   justify-content: space-between;
@@ -180,23 +219,25 @@
   gap: 30px;
 }
 
-/* 各スキル要素：2列配置 */
+/* 各スキル要素 */
 .skill-item {
-  flex: 0 0 calc(50% - 15px);
+  flex: 1;
+  min-width: 280px;
+  max-width: 30%;
   text-align: center;
 }
 
 /* 画像サイズ調整 */
 .skill-img {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   display: block;
   margin: 0 auto 20px auto;
   object-fit: contain;
 }
 /* スキルタイトル */
 .skill-title {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #00205B;
   margin-bottom: 10px;
@@ -205,19 +246,9 @@
 
 /* スキル説明文 */
 .skill-text {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.6;
   color: #333;
-}
-
-/* スキル説明文内のリンク */
-.skill-text a {
-  color: #333;
-  text-decoration: none;
-}
-
-.skill-text a:hover {
-  text-decoration: underline;
 }
 
   
@@ -295,10 +326,11 @@
   }
   
 
-  /* =========================
-   レスポンシブ対応（スマートフォン向け）
-   ========================= */
+  /* -----------------------------
+   スマートフォン向けの調整
+----------------------------- */
 @media screen and (max-width: 767px) {
+
   /* RECENT WORKS セクションの余白を調整 */
   .works {
     padding: 80px 20px;
@@ -317,19 +349,15 @@
   }
 
   .skill-item {
-    width: 100%;
-    max-width: 90%;
+    max-width: 100%;
     margin-bottom: 30px;
-    text-align: center;
   }
 
   .skill-img {
-    width: 84px;
-    height: 84px;
-    margin: 0 auto 20px auto;
+    width: 150px;
+    height: 150px;
   }
 
-  /* メインビジュアルの調整 */
   .mv {
     padding: 100px 20px;
   }
@@ -347,18 +375,50 @@
     font-size: 14px;
     padding: 0 10px;
   }
+
 }
+
+
+/* =========================
+   レスポンシブ対応（スマートフォン向け）
+   ========================= */
+   @media screen and (max-width: 767px) {
+    /* SKILLセクションのスキルリストを縦並びに変更 */
+    .skill-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .skill-item {
+      width: 100%;
+      max-width: 90%;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  
+    .skill-img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px auto;
+    }
+  }
   
   /* =========================
    RESEARCH ARTICLES 番号付きリスト用
    ========================= */
 .works-list {
-  counter-reset: work-counter;
+  counter-reset: work-counter; /* リスト全体でカウンター初期化 */
 }
 
-.works-list .work-item {
-  counter-increment: work-counter;
+.work-item {
+  counter-increment: work-counter; /* 各アイテムごとに+1 */
   margin-bottom: 1.5em;
+}
+
+.work-ref .work-title {
+  display: inline;   /* ← block から inline に変更 */
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .work-ref a {
@@ -370,20 +430,44 @@
   text-decoration: underline;
 }
 
-.my-name {
-  text-decoration: underline;
+.work-ref {
+  font-size: 16px;
+  line-height: 1.8;   /* ← デフォルトより少し広め */
+  margin-bottom: 1.5em;
 }
+
+.work-ref br {
+  line-height: 2; /* 改行のところだけ間隔を広く */
+}
+
+.work-authors {
+  display: block;
+  margin-top: 0.5em;
+  line-height: 1.8;
+  margin-left: 3.2em;   /* ← 全行まとめて字下げ */
+}
+
+.my-name {
+  text-decoration: underline;  /* 下線を引く */
+}
+
 
 /* =========================
    PRESENTATIONS 番号付きリスト用
    ========================= */
 .presentations-list {
-  counter-reset: pres-counter;
+  counter-reset: pres-counter; /* カウンター初期化 */
 }
 
 .presentations-list .work-item {
   counter-increment: pres-counter;
   margin-bottom: 1.5em;
+}
+
+.presentation-ref .work-title {
+  display: inline;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .presentation-ref a {
@@ -395,50 +479,103 @@
   text-decoration: underline;
 }
 
-/* リストコンテナ */
+.presentation-ref {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+}
+
+.presentation-ref br {
+  line-height: 2;
+}
+
+.presentation-ref .work-authors {
+  display: block;
+  margin-top: 0.5em;
+  line-height: 1.8;
+  margin-left: 0em;  /* 字下げ */
+}
+
+.my-name {
+  text-decoration: underline; /* 自分の名前に下線 */
+}
+
+.work-ref::before {
+  content: "[" counter(work-counter) "] ";
+  display: inline-block;
+  width: 2.5em;
+  text-align: right;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+
+.presentation-ref::before {
+  content: "[" counter(pres-counter) "] ";
+  display: inline-block;
+  width: 2.5em;
+  text-align: right;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+
 .works-list,
 .presentations-list {
   display: flex;
   flex-direction: column;
-  margin: 0 30px 40px 30px;
+  margin: 0 30px 40px 30px; /* ← 同じmargin */
   width: 90%;
+}
+
+.work-item {
+  margin-bottom: 0.5em;
+}
+
+
+.work-ref,
+.presentation-ref {
+  margin-bottom: 0;  /* ← pタグの余白を消す */
+}
+.work-item {
+  margin-bottom: 0em; /* ← 余白を一元管理 */
+}
+
+.work-item {
+  margin-bottom: 0; /* アイテム間の余白ゼロ */
+}
+.work-ref,
+.presentation-ref {
+  margin-bottom: 0; /* pタグの余白もゼロ */
+}
+
+.work-ref,
+.presentation-ref {
+  margin-bottom: 0;
+  line-height: 1.5; /* ← 行間を詰める */
+}
+
+.work-ref br,
+.presentation-ref br {
+  line-height: 0.5; /* ← 改行の余白もゼロに近く */
 }
 
 
 /* 番号付きの本文全体 */
 .work-ref,
 .presentation-ref {
-  position: relative;
-  padding-left: 3em;
+  position: relative;     /* 番号の基準にする */
+  padding-left: 3em;      /* 番号ぶん右に押し出す */
   margin-bottom: 0.5em;
   line-height: 1.5;
-  font-size: 16px;
-}
-
-/* 改行の余白 */
-.work-ref br,
-.presentation-ref br {
-  line-height: 0.5;
 }
 
 /* 番号 */
-.work-ref::before {
-  content: "[" counter(work-counter) "] ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 2.5em;
-  text-align: right;
-  font-weight: bold;
-}
-
+.work-ref::before,
 .presentation-ref::before {
-  content: "[" counter(pres-counter) "] ";
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 2.5em;
-  text-align: right;
+  left: 0;                /* 左端に固定 */
+  top: 0;                 /* 行頭に揃える */
+  width: 2.5em;           /* 番号の幅 */
+  text-align: right;      /* 番号を右寄せ */
   font-weight: bold;
 }
 
@@ -448,26 +585,12 @@
   font-weight: bold;
   font-size: 18px;
   display: inline;
-  color: #000000;
 }
-
-/* タイトル内のリンク */
-.work-ref .work-title a,
-.presentation-ref .work-title a {
-  color: #000000;
-  text-decoration: none;
-}
-
-.work-ref .work-title a:hover,
-.presentation-ref .work-title a:hover {
-  text-decoration: underline;
-}
-
-/* 著者リスト */
+/* 著者リストはタイトルと同じ開始位置 */
 .work-authors {
   display: block;
   margin-top: 0.3em;
-  margin-left: 0;
+  margin-left: 0;       /* ← 常に本文の開始位置から */
   line-height: 1.6;
 }
 
@@ -487,7 +610,7 @@
 
 /* LinkedIn リンクの見た目（通常は黒・下線なし） */
 .contact-linkedin {
-  color: #0a5089;
+  color: #00205B;
   text-decoration: none;
 }
 
@@ -501,7 +624,4 @@
   color: #333;
 }
 
-/* AWARDS と WORK EXPERIENCES の間隔を少し広げる */
-#award-list {
-    margin-bottom: 60px;  /* 好みに応じて 50〜80px くらいで調整 */
-  }
+
