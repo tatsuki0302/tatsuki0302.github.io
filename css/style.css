@@ -61,10 +61,63 @@
     padding-right: 10px;
     margin-right: 10px;
   }
-  
-  
+
+
   .gnav-item a:hover {
     text-decoration: underline;
+  }
+
+  /* 言語切り替えトグルのスタイル */
+  .gnav-item-lang {
+    border-right: none !important;
+  }
+
+  .lang-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 4px;
+    width: 80px;
+    height: 32px;
+    text-decoration: none !important;
+    transition: background-color 0.3s;
+  }
+
+  .lang-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    text-decoration: none !important;
+  }
+
+  .lang-option {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .lang-slider {
+    position: absolute;
+    top: 4px;
+    width: 36px;
+    height: 24px;
+    background-color: white;
+    border-radius: 16px;
+    transition: left 0.3s ease;
+    z-index: 1;
+  }
+
+  .lang-slider-jp {
+    left: 4px;
+  }
+
+  .lang-slider-en {
+    left: 40px;
   }
   
  /* メインビジュアル全体 */
