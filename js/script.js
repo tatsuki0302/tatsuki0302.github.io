@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // localStorage から保存済みのテーマを読み込む
-  const savedTheme = localStorage.getItem("theme");
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem("theme"); } catch (_) {}
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   applyTheme(savedTheme ? savedTheme === "dark" : prefersDark);
 
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     themeToggle.addEventListener("click", function () {
       const isLight = document.documentElement.getAttribute("data-theme") !== "dark";
       applyTheme(isLight);
-      localStorage.setItem("theme", isLight ? "dark" : "light");
+      try { localStorage.setItem("theme", isLight ? "dark" : "light"); } catch (_) {}
     });
   }
 });

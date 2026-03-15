@@ -16,6 +16,7 @@
     --link-external:  #0a5089;
     --page-top-bg:    #00205B;
     --page-top-hover: #334c99;
+    --border-card:    #d1d5db;
   }
 
   [data-theme="dark"] {
@@ -33,6 +34,7 @@
     --link-external:  #60a5fa;
     --page-top-bg:    #3b82f6;
     --page-top-hover: #60a5fa;
+    --border-card:    #374151;
   }
 
   /* ページ全体の余白をなくす */
@@ -340,6 +342,84 @@
   margin: 0;
   padding-bottom: 20px;
   text-align: center;
+}
+
+  /* BIOGRAPHY セクション */
+.biography {
+  background-color: var(--bg-card);
+  padding: 80px 20px;
+}
+
+.biography-timeline {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-left: 36px;
+}
+
+/* 縦線 */
+.biography-timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--primary);
+  opacity: 0.3;
+}
+
+.bio-item {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.bio-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ドット */
+.bio-dot {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.bio-year {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 2px;
+  font-family: Verdana, sans-serif;
+}
+
+.bio-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text-strong);
+  margin: 2px 0 3px;
+}
+
+.bio-place {
+  font-size: 13px;
+  color: var(--text);
+  margin: 0;
+}
+
+.bio-place a {
+  color: var(--link-external);
+  text-decoration: none;
+}
+
+.bio-place a:hover {
+  text-decoration: underline;
 }
 
   /* RECENT WORKS セクション */
@@ -672,34 +752,49 @@
   line-height: 1.6;
 }
 
-/* CONTACT 内のリンクとメールを横並びに */
-.contact-links {
-  font-size: 14px;
-  text-align: center;          /* 左寄せにしたければ left に変更 */
+/* CONTACT カード */
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
 }
 
-/* LinkedIn リンク・メール・区切りを同じ行に */
-.contact-links .contact-linkedin,
-.contact-links .contact-email,
-.contact-links .contact-separator {
-  display: inline-block;
-  margin: 0 4px;
-}
-
-/* LinkedIn リンクの見た目 */
-.contact-linkedin {
-  color: var(--link-external);
+.contact-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 10px;
   text-decoration: none;
-}
-
-/* ホバー時だけ下線を表示 */
-.contact-linkedin:hover {
-  text-decoration: underline;
-}
-
-/* 区切りの / の余白など微調整したければここで */
-.contact-separator {
   color: var(--text);
+  font-size: 14px;
+  background-color: var(--bg-card);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.contact-card:not(.contact-card-static):hover {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.contact-card:not(.contact-card-static):hover .contact-card-icon {
+  fill: white;
+  color: white;
+}
+
+.contact-card-static {
+  cursor: default;
+}
+
+.contact-card-icon {
+  fill: var(--text);
+  color: var(--text);
+  flex-shrink: 0;
+  font-size: 20px;
 }
 
 /* AWARDS と WORK EXPERIENCES の間隔を少し広げる */
