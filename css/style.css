@@ -1,13 +1,51 @@
+  /* ===========================
+   カラーテーマ変数
+   =========================== */
+  :root {
+    --header-bg:      #00205B;
+    --primary:        #00205B;
+    --bg-main:        #f8f9fb;
+    --bg-alt:         #f4f4f4;
+    --bg-card:        #ffffff;
+    --text:           #333333;
+    --text-strong:    #000000;
+    --border-subtle:  rgba(0, 0, 0, 0.1);
+    --footer-bg:      #333333;
+    --footer-text:    #6b6868;
+    --footer-credit:  #bbbbbb;
+    --link-external:  #0a5089;
+    --page-top-bg:    #00205B;
+    --page-top-hover: #334c99;
+  }
+
+  [data-theme="dark"] {
+    --header-bg:      #1e293b;
+    --primary:        #60a5fa;
+    --bg-main:        #0f172a;
+    --bg-alt:         #1e293b;
+    --bg-card:        #111827;
+    --text:           #cbd5e1;
+    --text-strong:    #e2e8f0;
+    --border-subtle:  rgba(255, 255, 255, 0.1);
+    --footer-bg:      #020617;
+    --footer-text:    #94a3b8;
+    --footer-credit:  #64748b;
+    --link-external:  #60a5fa;
+    --page-top-bg:    #3b82f6;
+    --page-top-hover: #60a5fa;
+  }
+
   /* ページ全体の余白をなくす */
   html, body {
     margin: 0;
     padding: 0;
     font-family: Verdana, sans-serif;
+    color: var(--text);
   }
-  
+
   /* ヘッダーを画面幅いっぱいにする */
   .header {
-    background-color: #00205B;
+    background-color: var(--header-bg);
     color: white;
     padding: 22.5px 0;
     width: 100%;
@@ -53,6 +91,7 @@
     font-family: Verdana, sans-serif;
     padding: 0 10px;
     font-size: 15px;
+    white-space: nowrap;
   }
   
   /* 仕切り線を右に表示（最後の要素以外） */
@@ -65,6 +104,34 @@
 
   .gnav-item a:hover {
     text-decoration: underline;
+  }
+
+  /* ダークモードトグルボタン */
+  .gnav-item-theme {
+    border-right: none !important;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    transition: background-color 0.2s;
+  }
+
+  .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .theme-toggle .material-icons-outlined {
+    font-size: 22px;
   }
 
   /* 言語切り替えトグルのスタイル */
@@ -122,7 +189,7 @@
   
  /* メインビジュアル全体 */
 .mv {
-    background-color: #f8f9fb;
+    background-color: var(--bg-main);
     padding: 160px 160px; /* 上下の余白を大きく（以前は60px） */
     text-align: center;
   }
@@ -133,14 +200,14 @@
     font-weight: bold;
     margin-bottom: 10px;
     font-family: Verdana, sans-serif;
-    color: #00205B;
+    color: var(--primary);
   }
-  
+
   /* PORTFOLIO の部分 */
   .mv-subtitle {
     font-size: 18px;
-    font-weight: bold;        /* ← 太文字に */
-    color: #00205B;           /* ← ヘッダーと同じ色に */
+    font-weight: bold;
+    color: var(--primary);
     margin-bottom: 30px;
     letter-spacing: 2px;
   }
@@ -149,15 +216,15 @@
   .mv-description {
     font-size: 16px;
     line-height: 1.8;
-    color: #333;
+    color: var(--text);
     max-width: 1100px;       /* ← 最大幅を制限して読みやすく */
     margin: 0 auto;         /* ← 中央寄せ */
     padding: 0 20px;        /* ← 小さい画面でも少し余白を確保 */
   }
 
-  /* ABOUT全体の背景色を薄いグレーに */
+  /* ABOUT全体の背景色 */
   .about {
-    background-color: #f4f4f4;  /* ← 薄いグレー背景 */
+    background-color: var(--bg-alt);
     padding: 50px 20px;
   }
   
@@ -165,7 +232,7 @@
   .section-title {
     text-align: center;
     font-size: 32px;
-    color: #00205B;
+    color: var(--primary);
     font-weight: bold;
     margin-bottom: 60px;
     font-family: Verdana, sans-serif;
@@ -197,7 +264,7 @@
     min-width: 280px;
     font-size: 16px;
     line-height: 1.8;
-    color: #333;
+    color: var(--text);
   }
   
   .about-text p {
@@ -208,7 +275,7 @@
 .about-slogan {
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border-subtle);
   text-align: center;
   max-width: 1000px;
   margin-left: auto;
@@ -228,7 +295,7 @@
 .slogan-header-title {
   font-size: 24px;
   font-weight: bold;
-  color: #00205B;
+  color: var(--primary);
   font-family: Verdana, sans-serif;
   margin: 0;
   margin-right: 10px;
@@ -236,7 +303,7 @@
 
 .slogan-toggle-icon {
   font-size: 28px;
-  color: #00205B;
+  color: var(--primary);
   transition: transform 0.3s ease;
 }
 
@@ -257,7 +324,7 @@
 
 .slogan-main {
   font-size: 40px;
-  color: #000000;
+  color: var(--text-strong);
   font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -268,7 +335,7 @@
 .slogan-sub {
   font-size: 16px;
   line-height: 1.8;
-  color: #000000;
+  color: var(--text-strong);
   font-style: normal;
   margin: 0;
   padding-bottom: 20px;
@@ -277,7 +344,7 @@
 
   /* RECENT WORKS セクション */
   .works {
-    background-color: #ffffff;  /* 必要であれば背景色指定 */
+    background-color: var(--bg-card);
     padding: 100px 100px;        /* 上下左右の余白を統一 */
   }
 
@@ -288,18 +355,18 @@
     max-width: 1000px;
     padding: 0 30px;
     letter-spacing: .05em;
-    color: #333;
+    color: var(--text);
   }
 
   /* CONTACT セクション全体 */
   .contact {
-    background-color: #ffffff; 
+    background-color: var(--bg-card);
     padding: 100px 20px;
   }
   
   /* SKILL セクション背景 */
 .skill {
-  background-color: #f4f4f4;
+  background-color: var(--bg-alt);
   padding: 80px 20px;
 }
 
@@ -331,7 +398,7 @@
 .skill-title {
   font-size: 24px;
   font-weight: bold;
-  color: #00205B;
+  color: var(--primary);
   margin-bottom: 10px;
   font-family: Verdana, sans-serif;
 }
@@ -340,12 +407,12 @@
 .skill-text {
   font-size: 18px;
   line-height: 1.6;
-  color: #333;
+  color: var(--text);
 }
 
 /* スキル説明文内のリンク */
 .skill-text a {
-  color: #333;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -364,7 +431,7 @@
   /* 説明文 */
   .contact-text {
     font-size: 16px;
-    color: #333;
+    color: var(--text);
     margin-bottom: 40px;
     line-height: 1.6;
   }
@@ -372,7 +439,7 @@
   /* メールアドレス */
   .contact-email {
     font-size: 14px;
-    color: #00205B;
+    color: var(--primary);
     font-family: Verdana, sans-serif;
   }
   
@@ -383,7 +450,7 @@
     bottom: 20px;
     width: 48px;
     height: 48px;
-    background-color: #00205B;
+    background-color: var(--page-top-bg);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -395,18 +462,18 @@
   }
   
   .page-top:hover {
-    background-color: #334c99;
+    background-color: var(--page-top-hover);
   }
   
   /* フッター全体 */
   .footer {
-    background-color: #333;  /* 濃いグレー */
+    background-color: var(--footer-bg);
     padding: 30px 20px;
     text-align: center;
   }
   
   .footer-text {
-    color: #6b6868;
+    color: var(--footer-text);
     font-family: Verdana, sans-serif;
     font-size: 14px;
   }
@@ -414,12 +481,12 @@
   .footer-credit {
     font-size: 10px;
     text-align: center;
-    color: #bbb; /* 明るい灰色 */
+    color: var(--footer-credit);
     margin-top: 10px;
   }
   
   .footer-credit a {
-    color: #bbb;           /* 明るい灰色 */
+    color: var(--footer-credit);
     text-decoration: none; /* 下線なし */
   }
   
@@ -495,7 +562,7 @@
 }
 
 .work-ref a {
-  color: #333;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -520,7 +587,7 @@
 }
 
 .presentation-ref a {
-  color: #333;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -582,13 +649,13 @@
   font-weight: bold;
   font-size: 18px;
   display: inline;
-  color: #000000;
+  color: var(--text-strong);
 }
 
 /* タイトル内のリンク */
 .work-ref .work-title a,
 .presentation-ref .work-title a {
-  color: #000000;
+  color: var(--text-strong);
   text-decoration: none;
 }
 
@@ -619,9 +686,9 @@
   margin: 0 4px;
 }
 
-/* LinkedIn リンクの見た目（通常は黒・下線なし） */
+/* LinkedIn リンクの見た目 */
 .contact-linkedin {
-  color: #0a5089;
+  color: var(--link-external);
   text-decoration: none;
 }
 
@@ -632,7 +699,7 @@
 
 /* 区切りの / の余白など微調整したければここで */
 .contact-separator {
-  color: #333;
+  color: var(--text);
 }
 
 /* AWARDS と WORK EXPERIENCES の間隔を少し広げる */
