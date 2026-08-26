@@ -438,6 +438,16 @@
     color: var(--text);
   }
 
+  .works-subtype {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px auto 15px auto;
+    max-width: 1000px;
+    padding: 2px 30px;
+    border-left: 4px solid var(--primary);
+    color: var(--text-strong);
+  }
+
   /* CONTACT セクション全体 */
   .contact {
     background-color: var(--bg-card);
